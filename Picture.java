@@ -64,9 +64,17 @@ public class Picture
         sun.changeSize(80);
         sun.makeVisible();
         
-        while(contador < 6){
+        while(contador < 8){
             sun.slowMoveVertical(-15);
             contador++;
+        }
+    }
+    
+    public void atardecer()
+    {
+        while(contador2 < 8){
+            sun.slowMoveVertical(15);
+            contador2++;
         }
     }
     
