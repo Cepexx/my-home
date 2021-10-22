@@ -63,23 +63,13 @@ public class Picture
         sun.moveVertical(75);
         sun.changeSize(80);
         sun.makeVisible();
-    }
-    
-    public void amanecer()
-    {
+        
         while(contador < 6){
-            sun.moveUp();
+            sun.slowMoveVertical(-15);
             contador++;
         }
     }
-
-    public void anochecer()
-    {
-        while(contador2 < 6){
-            sun.moveDown();
-            contador2++;
-        }
-    }
+    
     /**
      * Change this picture to black/white display
      */
