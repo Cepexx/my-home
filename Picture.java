@@ -15,7 +15,9 @@ public class Picture
     private Square window;
     private Triangle roof;
     private Circle sun;
-
+    private Square grass;
+    private int contador = 0;
+    private int contador2 = 0;
     /**
      * Constructor for objects of class Picture
      */
@@ -29,6 +31,13 @@ public class Picture
      */
     public void draw()
     {
+        grass = new Square();
+        grass.changeColor("green");
+        grass.moveHorizontal(-300);
+        grass.moveVertical(135);
+        grass.changeSize(1000);
+        grass.makeVisible();
+        
         wall = new Square();
         wall.moveHorizontal(-140);
         wall.moveVertical(20);
@@ -51,11 +60,26 @@ public class Picture
         sun = new Circle();
         sun.changeColor("yellow");
         sun.moveHorizontal(100);
-        sun.moveVertical(-40);
+        sun.moveVertical(75);
         sun.changeSize(80);
         sun.makeVisible();
     }
+    
+    public void amanecer()
+    {
+        while(contador < 6){
+            sun.moveUp();
+            contador++;
+        }
+    }
 
+    public void anochecer()
+    {
+        while(contador2 < 6){
+            sun.moveDown();
+            contador2++;
+        }
+    }
     /**
      * Change this picture to black/white display
      */
@@ -67,6 +91,7 @@ public class Picture
             window.changeColor("white");
             roof.changeColor("black");
             sun.changeColor("black");
+            grass.changeColor("black");
         }
     }
 
@@ -81,6 +106,7 @@ public class Picture
             window.changeColor("black");
             roof.changeColor("green");
             sun.changeColor("yellow");
+            grass.changeColor("green");
         }
     }
 }
